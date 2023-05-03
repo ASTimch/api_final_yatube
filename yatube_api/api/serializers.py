@@ -76,7 +76,7 @@ class FollowSerializer(serializers.ModelSerializer):
         ]
 
     def validate_following(self, value):
-        request = self.context.get('request', None)
+        request = self.context.get("request", None)
         current_user = None
         if request:
             current_user = request.user

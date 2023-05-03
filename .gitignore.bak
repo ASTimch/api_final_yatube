@@ -6,9 +6,6 @@ __pycache__/
 # C extensions
 *.so
 
-.vscode/
-pyproject.toml
-
 # Distribution / packaging
 .Python
 build/
@@ -150,6 +147,4 @@ dmypy.json
 
 # папки со статикой и медиа
 media/
-static/
 yatube_api/posts/static/
-yatube_api/media/
