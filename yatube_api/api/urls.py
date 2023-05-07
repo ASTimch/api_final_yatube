@@ -18,9 +18,13 @@ v1_router.register(
 )
 v1_router.register("follow", FollowViewSet)
 
+jwt_urlpatterns = [
+    path("create/", TokenObtainPairView.as_view(), name="jwt-create"),
+    path("refresh/", TokenRefreshView.as_view(), name="jwt-refresh"),
+    path("verify/", TokenVerifyView.as_view(), name="jwt-verify"),
+]
+
 urlpatterns = [
     path("v1/", include(v1_router.urls)),
-    path("v1/jwt/create/", TokenObtainPairView.as_view(), name="jwt-create"),
-    path("v1/jwt/refresh/", TokenRefreshView.as_view(), name="jwt-refresh"),
-    path("v1/jwt/verify/", TokenVerifyView.as_view(), name="jwt-verify"),
+    path("v1/jwt/", include(jwt_urlpatterns)),
 ]
